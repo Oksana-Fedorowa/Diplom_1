@@ -2,18 +2,22 @@ from conftest import *
 
 
 class TestBurger:
-    def test_initial_state(self, burger): #проверяется начальное состояние объекта Burger
+    def test_initial_state(self):#проверяется начальное состояние объекта Burger
+        burger = Burger()
         assert burger.bun is None and len(burger.ingredients) == 0
 
-    def test_set_bun(self, burger, mock_bun): #Проверяет установку булки в бургер.
+    def test_set_bun(self, mock_bun):#Проверяет установку булки в бургер.
+        burger = Burger()
         burger.set_buns(mock_bun)
         assert burger.bun == mock_bun
 
-    def test_add_ingredient(self, burger, mock_sauce): #Проверяет добавление ингредиента в бургер
+    def test_add_ingredient(self,  mock_sauce):#Проверяет добавление ингредиента в бургер
+        burger = Burger()
         burger.add_ingredient(mock_sauce)
         assert mock_sauce in burger.ingredients
 
-    def test_remove_ingredient(self, burger, mock_ingredient):
+    def test_remove_ingredient(self, mock_ingredient):
+        burger = Burger()
         burger.add_ingredient(mock_ingredient)
         burger.remove_ingredient(0)
         assert len(burger.ingredients) == 0

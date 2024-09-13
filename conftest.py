@@ -18,10 +18,7 @@ def mock_bun():
     return mock_bun
 
 
-@pytest.fixture()  # Создаем объект Burger
-def burger():
-    burger = Burger()
-    return burger
+
 
 
 @pytest.fixture()
